@@ -1,0 +1,26 @@
+{{- $containerPort := .Values.containerPort -}}
+{{- $image := .Values.image -}}
+{{- range .Values.canaryConfig }}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .name }}
+  namespace: apps
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ .name }}
+  template:
+    metadata:
+      labels:
+        app: {{ .name }}
+    spec:
+      serviceAccountName: backend-service
+      containers:
+      - name: {{ .name }}
+        image: {{ $image }}:{{ .tag }}
+        ports:
+        - containerPort: {{ $containerPort }}
+{{- end }}
