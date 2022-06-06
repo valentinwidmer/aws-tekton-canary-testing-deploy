@@ -25,4 +25,4 @@ canaryConfig:
     weight: 50
   - name: "test"
     tag: "8b5d51b"
-    weigth: 25
+    weight: 25
