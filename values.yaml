@@ -2,16 +2,27 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-serviceName: "backend"
-servicePort: 80
-containerPort: 3000
+detail:
+  replicaCount: 2
+  namespace: apps
+  name: backend-service
+
+  serviceAccount: backend-service
+
+  image:
+    pullPolicy: Always
+
+  service:
+    type: ClusterIP
+    targetPort: 3000
+
 canaryConfig:
-  - name: "test"
-    tag: "40ba2e8"
+  - name: "latest"
+    tag: "latest"
     weight: 50
-  # - name: "feature-x"
-  #   tag: "1.0.2"
-  #   weight: 25
+  - name: "v2"
+    tag: "v2.0.0"
+    weight: 50
   # - name: "feature-y"
   #   tag: "1.0.1"
   #   weigth: 25
