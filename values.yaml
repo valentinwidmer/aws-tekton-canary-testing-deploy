@@ -20,9 +20,9 @@ canaryConfig:
   - name: "latest"
     tag: "latest"
     weight: 25
-  - name: "v2"
-    tag: "v2.0.0"
-    weight: 50
+  # - name: "v2"
+  #   tag: "v2.0.0"
+  #   weight: 50
   - name: "test"
     tag: "8b5d51b"
-    weight: 25
+    weight: 50
