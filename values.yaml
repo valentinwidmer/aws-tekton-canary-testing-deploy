@@ -17,6 +17,6 @@ detail:
     targetPort: 3000
 
 canaryConfig:
-  - name: "first_release"
+  - name: "backend-v1"
     tag: "v1.0.0"
     weight: 100
