@@ -17,15 +17,6 @@ detail:
     targetPort: 3000
 
 canaryConfig:
-  - name: "latest"
-    tag: "latest"
-    weight: 50
-  # - name: "v2"
-  #   tag: "v2.0.0"
-  #   weight: 25
-  - name: "test"
-    tag: "8b5d51b"
-    weight: 25
-  - name: "four"
-    tag: "b16425b"
-    weight: 25
+  - name: "first_release"
+    tag: "v1.0.0"
+    weight: 100
