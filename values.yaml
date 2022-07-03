@@ -6,12 +6,9 @@ detail:
   replicaCount: 2
   namespace: apps
   name: backend-service
-
   serviceAccount: backend-service
-
   image:
     pullPolicy: Always
-
   service:
     type: ClusterIP
     targetPort: 3000
@@ -19,4 +16,9 @@ detail:
 canaryConfig:
   - name: "backend-v1"
     tag: "v1.0.0"
-    weight: 100
+    weight: 50
+# RELEASE OF NEW APP VERSION - START
+  - name: "backend-v2"
+    tag: "v2.0.0"
+    weight: 50
+# RELEASE OF NEW APP VERSION - END
