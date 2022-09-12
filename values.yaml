@@ -10,9 +10,9 @@ detail:
     targetPort: 3000
 
 canaryConfig:
-  - name: "backend-v1"
-    tag: "v1.0.0"
-    weight: 50
-  - name: "backend-v3"
-    tag: "v3.0.0"
-    weight: 50
+  - name: "backend-v1" # name of k8s deployment
+    tag: "v1.0.0" # image tag stored in ECR
+    weight: 50 # percentage of traffic to backend-v1
+  - name: "backend-v2" # name of k8s deployment
+    tag: "v2.0.0" # image tag stored in ECR
+    weight: 20 # percentage of traffic to backend-v2
